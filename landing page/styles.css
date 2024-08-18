@@ -1,0 +1,307 @@
+/* General Styles */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(45deg, #1f1c2c, #928dab, #ff6f61);
+    background-size: 200% 200%;
+    animation: gradientBackground 10s ease infinite;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    padding: 20px 5%; /* Adjusted padding to move header closer to the left */
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #00ffea;
+    backdrop-filter: blur(10px);
+}
+
+header .logo {
+    font-size: 2em;
+    color: #00ffea;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    animation: logoAnimation 1s ease-in-out;
+    margin-right: 50px; /* Space between the logo and the navigation */
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-start; /* Ensure nav items are aligned to the left */
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Space between navigation items */
+    margin: 0;
+}
+
+header ul li {
+    position: relative;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+header ul li a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+header ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: #00ffea;
+    transition: width 0.3s ease;
+}
+
+header ul li a:hover::after {
+    width: 100%;
+}
+
+header ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #00ffea;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 255, 234, 0.3);
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('gaming-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 40px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    animation: slideIn 2s ease-out;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.hero p {
+    font-size: 1.6em;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero .cta-button {
+    animation: pulse 1.5s infinite;
+    background-color: #00ffea;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero .cta-button:hover {
+    background-color: #00bfa5;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 234, 0.7);
+}
+
+/* Animations */
+@keyframes slideIn {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.featured-games, .community {
+    background-color: #222;
+    padding: 80px 10%;
+}
+
+.featured-games h2, .community h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.game-cards, .community-features {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.game-card, .feature {
+    background-color: #333;
+    border-radius: 15px;
+    padding: 30px;
+    width: 30%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover, .feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.5);
+}
+
+.game-card img, .feature img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.join-us-form {
+    background-color: #1f1c2c;
+    padding: 80px 10%;
+}
+
+.join-us-form h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.join-us-form form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.join-us-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.join-us-form input[type="text"],
+.join-us-form input[type="tel"],
+.join-us-form input[type="email"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.join-us-form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #00ffea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.join-us-form input[type="submit"]:hover {
+    background-color: #00bfa5;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 234, 0.7);
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.footer-column h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.footer-column p, .footer-column ul {
+    font-family: 'Poppins', sans-serif;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.social-links li a {
+    color: #fff;
+    font-size: 22px;
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: #00ffea;
+}
+
+@media (max-width: 768px) {
+    .game-cards, .community-features {
+        flex-direction: column;
+    }
+
+    header ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header ul li a {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}
